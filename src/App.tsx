@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import  Home  from './components/Home'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Quiz from './components/quiz/quizs'
 function App() {
   
   return (
@@ -11,7 +13,12 @@ function App() {
       <h1 className="text-3xl font-bold underline">
      Welcome to Super Quiz
     </h1>
-      <Home />
+    <BrowserRouter>
+    <Routes>
+      <Route path="/quiz/:category/:name" element={<Quiz/>}/>
+      <Route path="/" element={<Home/>}/>
+      </Routes>
+      </BrowserRouter>
       </div>
     </>
   )
