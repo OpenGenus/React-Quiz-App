@@ -25,7 +25,11 @@ const Quizs = (props: QuizProps) => {
         })}
     </div> :
     <div>
-
+        {geoQuestions.map((question, i) => {
+            return (
+                <Quiz key={i} Question={question}/>
+            )
+        })}
     </div>    
     }
         </div>
