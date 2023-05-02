@@ -20,11 +20,17 @@ const Quizs = (props: QuizProps) => {
         console.log("Compare answer",answer)
 
     //check if answer is correct or not
+    if(category=="tech"){
     if (answer === techQuestions[currentqt].correct) {
-        console.log("correct")
             setscore(score + 1);
        
     }
+}
+else{
+    if (answer === geoQuestions[currentqt].correct) {
+            setscore(score + 1);
+}
+}
 }
     const handleNextClick = (e: any) => {
         e.preventDefault();
@@ -59,7 +65,7 @@ const Quizs = (props: QuizProps) => {
                         <form>
                         <Quiz handleCallback={answers}    key={currentqt} Question={geoQuestions[currentqt]} />
                         <div className="flex justify-end ">
-                            <button type='submit' className=" bg-green-500 text-white px-8 py-2 rounded-md hover:scale-110" onClick={handleNextClick}>Next</button>
+                            <button type='submit' name="geo" className=" bg-green-500 text-white px-8 py-2 rounded-md hover:scale-110" onClick={handleNextClick}>Next</button>
                         </div>
                         </form>
                     </div>

@@ -5,20 +5,19 @@ interface Scoreset {
 }
 const Score = (props:  Scoreset) => {
     const navigate = useNavigate()
-    console.log("Your Score is", props)
   return (
     <div>
             {props.Scoreset >= 8 ? 
             
             <h1 className='text-2xl font-bold'>Congrats! You scored the higest 
-                    Your Score is {props.Scoreset}
+                    Your Score is <i>{props.Scoreset}</i> out of 10
 
             </h1> 
             :
             <>
             <h1 className='text-2xl font-bold'>
                 {props.Scoreset >= 6 ? <h1></h1> : <h1>Nice try! Try again
-                    You Scored {props.Scoreset}
+                    You Scored <i>{props.Scoreset}</i> out of 10   
                 </h1>
                 }
             </h1>
