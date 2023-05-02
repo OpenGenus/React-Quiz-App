@@ -17,7 +17,6 @@ const Quizs = (props: QuizProps) => {
     const [score, setscore] = useState(0);
 
     const answers = (answer: any) => {
-        console.log("Compare answer",answer)
 
     //check if answer is correct or not
     if(category=="tech"){
@@ -36,7 +35,6 @@ else{
         e.preventDefault();
         
         setcurrentqt(currentqt + 1);
-        console.log("SCORE:",score)
     };
     const handlesetScore = () => {
         setscore(score+1);
@@ -50,7 +48,7 @@ else{
             </div>
             <div>
                 <h2>Quiz 10 questions</h2>
-                <h3 className=' bg-green-500 w-20 rounded-xl text-2xl p-5'>{currentqt}/10</h3>
+                <h3 className=' bg-green-500 w-24 rounded-xl text-2xl p-5'>{currentqt}/10</h3>
                 {
                 currentqt < 10 ? 
                 category === 'tech' ?
