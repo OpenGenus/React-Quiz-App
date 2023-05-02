@@ -1,5 +1,5 @@
 import React from "react";
-import Quizs from "./quiz/quizs";
+import Quizs from "./quiz/Quizs";
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 
