@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <div>
-      <h1 className="text-3xl font-bold underline">
+      <h1 className="text-3xl font-bold underline bg-gray-200"> 
      Welcome to Super Quiz
     </h1>
     <BrowserRouter>
