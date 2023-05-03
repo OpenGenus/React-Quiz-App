@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import  Home  from './components/Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Score from './components/quiz/Score'
 import Quiz from './components/quiz/Quizs'
 function App() {
   
@@ -17,6 +18,7 @@ function App() {
     <Routes>
       <Route path="/quiz/:category/:name" element={<Quiz/>}/>
       <Route path="/" element={<Home/>}/>
+      <Route path="/score/:score/:name" element={<Score/>} />
       </Routes>
       </BrowserRouter>
       </div>

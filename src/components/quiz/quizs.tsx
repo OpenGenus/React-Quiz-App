@@ -1,10 +1,12 @@
 import geoQuestions from '../../assets/geoQuestions.json'
 import techQuestions from '../../assets/techQuestions.json'
 import Quiz from './Quiz';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import { useState } from 'react';
 import Score from './Score';
 import nextbutton from '../../assets/next-icon.svg'
+import Countdown from 'react-countdown';
+
 
 interface QuizProps {
     category: string;
@@ -12,6 +14,7 @@ interface QuizProps {
 }
 
 const Quizs = (props: QuizProps) => {
+    const navigate = useNavigate()
     const { category, name } = useParams();
     const [currentqt, setcurrentqt] = useState(0);
     const [score, setscore] = useState(0);
@@ -19,11 +22,9 @@ const Quizs = (props: QuizProps) => {
 
     const answers = (answer: any) => {
         setisdisabled(false);
-    //check if answer is correct or not
     if(category=="tech"){
     if (answer === techQuestions[currentqt].correct) {
-            setscore(score + 1);
-       
+            setscore(score + 1); 
     }
 }
 else{
@@ -41,6 +42,23 @@ else{
     const handlesetScore = () => {
         setscore(score+1);
     }
+    const Completionist = () => 
+    {
+        setTimeout(() =>{
+            navigate(`/score/${score}/${name}`, {state: {score: score, name: name}})
+         }, 1000)
+    return (<span>Time is up</span>)
+   
+};
+    const renderer = ({ hours, minutes, seconds, completed }: any) => {
+        if (completed) {
+          // Render a completed state
+          return <Completionist />;
+        } else {
+          // Render a countdown
+          return <span>{hours}:{minutes}:{seconds}</span>;
+        }
+      };
 
     return (
         <>
@@ -50,6 +68,11 @@ else{
             </div>
             <div className='relative'>
                 <h2 className='bg-gray-200'>Quiz 10 questions</h2>
+                <h2>
+                    <Countdown
+                    date={Date.now() + 300000}
+                        renderer={renderer}/>
+                        </h2>
                 <h3 className=' bg-green-500 w-24 rounded-xl text-2xl p-5 absolute top-[62px]   '>{currentqt}/10</h3>
                 {
                 currentqt < 10 ? 
