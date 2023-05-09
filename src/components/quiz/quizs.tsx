@@ -39,9 +39,9 @@ else{
         
         setcurrentqt(currentqt + 1);
     };
-    // const handlesetScore = () => {
-    //     setscore(score+1);
-    // }
+    const handlesetScore = () => {
+        setscore(score+1);
+    }
     const Completionist = () => 
     {
         console.log("SCORE at quiz: ", score)
@@ -76,7 +76,7 @@ if(currentqt == 10){
                     date={Date.now() + 300000}
                         renderer={renderer}/>
                         </h2>
-                <h3 className=' bg-green-500 w-24 rounded-xl text-2xl p-5 absolute top-[62px]   '>{currentqt}/10</h3>
+                <h3 className=' bg-green-500 w-24 rounded-xl text-2xl p-5 absolute top-[62px]   '>{currentqt+1}/10</h3>
                 {
                 currentqt < 10 ? 
                 category === 'tech' ?
