@@ -1,9 +1,8 @@
 import geoQuestions from '../../assets/geoQuestions.json'
 import techQuestions from '../../assets/techQuestions.json'
 import Quiz from './Quiz';
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import Score from './Score';
 import nextbutton from '../../assets/next-icon.svg'
 import Countdown from 'react-countdown';
 
@@ -13,7 +12,7 @@ interface QuizProps {
     name: string;
 }
 
-const Quizs = (props: QuizProps) => {
+const Quizs = () => {
     const navigate = useNavigate()
     const { category, name } = useParams();
     const [currentqt, setcurrentqt] = useState(0);
@@ -32,6 +31,7 @@ else{
             setscore(score + 1);
 }
 }
+
 }
     const handleNextClick = (e: any) => {
         setisdisabled(true);
@@ -44,6 +44,7 @@ else{
     }
     const Completionist = () => 
     {
+        console.log("SCORE at quiz: ", score)
         setTimeout(() =>{
             navigate(`/score/${score}/${name}`, {state: {score: score, name: name}})
          }, 1000)
@@ -59,7 +60,9 @@ else{
           return <span>{hours}:{minutes}:{seconds}</span>;
         }
       };
-
+if(currentqt == 10){
+    navigate(`/score/${score}/${name}`, {state: {score: score, name: name}})
+}
     return (
         <>
             <div className='relative flex gap-7 justify-center p-2 bg-gray-200'>
@@ -69,7 +72,7 @@ else{
             <div className='relative'>
                 <h2 className='bg-gray-200'>Quiz 10 questions</h2>
                 <h2>
-                    <Countdown
+                    Time left <Countdown
                     date={Date.now() + 300000}
                         renderer={renderer}/>
                         </h2>
@@ -99,7 +102,7 @@ else{
                         </div>
                         </form>
                     </div>
-                : <Score Scoreset = {score} />}
+                : <></>}
             </div>
             <div>
             </div>

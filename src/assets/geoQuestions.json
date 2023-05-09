@@ -101,10 +101,10 @@
 {
 "question": "What is the capital of Brazil?",
     "answers": [
-        "Brasilia",
         "Paris",
         "Mumbai",
-        "Chennai"
+        "Chennai",
+        "Brasilia"
     ],
     "correct": "Brasilia",
     "questionId": "10"
