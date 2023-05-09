@@ -39,9 +39,9 @@ else{
         
         setcurrentqt(currentqt + 1);
     };
-    const handlesetScore = () => {
-        setscore(score+1);
-    }
+    // const handlesetScore = () => {
+    //     setscore(score+1);
+    // }
     const Completionist = () => 
     {
         console.log("SCORE at quiz: ", score)
