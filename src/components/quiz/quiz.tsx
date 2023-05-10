@@ -23,17 +23,17 @@ const Quiz = (props: Question) => {
       <div className="flex">
         <p className="text-2xl">{props.Question.question}</p>
       </div>
-      <div className="flex flex-col items-start  text-xl  p-20">
-        {props.Question.answers.map((answer, i) => {
+      <div className="flex flex-col items-start gap-4  text-xl  p-20">
+        {props.Question.answers.map((answer: string, i: number ) => {
           return (
             <ul className="flex " key={i}>
-              <li>
+              <li className="flex border bg-gray-300 answered w-[100%] items-center p-3 rounded-xl"  >
                 <input
                   onChange={handleanswer}
                   value={answer}
                   type="radio"
                   name="ans"
-                  className="mr-4 w-4 h-4 border"
+                  className="mr-4 w-4 h-4 "
                 />
                 {answer}
               </li>
