@@ -77,7 +77,6 @@ if(currentqt == 10){
             </div>
             <div className='relative'>
                 <h2 className='bg-gray-200'>Quiz 10 questions</h2>
-                        <h2>Time left </h2>
                         <Time />
                 <h3 className=' bg-green-500 w-24 rounded-xl text-2xl p-5 absolute top-[62px]   '>{currentqt+1}/10</h3>
                 {

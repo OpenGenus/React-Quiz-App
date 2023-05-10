@@ -42,7 +42,7 @@ const handlecategory = (e: any) => {
                 <option value="geo">Geography</option>        
             </select>
             </div>
-            <small className="text-white">Note: You will have 10 multiple-choice questions to finish in 5 minutes!</small>
+            <small className="text-white">Note: You will have 10 multiple-choice questions to finish in 4 minutes!</small>
                  <button disabled={isdisabled} className="text-white bg-green-500 p-3 rounded-xl w-[30%] disabled:bg-gray-600" onClick={handlequiz}>Take Quiz</button>    
                 </div> 
                 : 
