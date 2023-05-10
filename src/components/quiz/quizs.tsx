@@ -21,6 +21,7 @@ const Quizs = () => {
     const [currentqt, setcurrentqt] = useState(0);
     const [score, setscore] = useState(0);
     const [isdisabled, setisdisabled] = useState(true);
+    let [selected, setselected] = useState() ;
     useEffect(() => {
         const encodeScore = btoa(score.toString())
         const urlSearchParams = new URLSearchParams(window.location.search);
@@ -28,23 +29,25 @@ const Quizs = () => {
         window.history.replaceState({}, '', `${window.location.pathname}?${urlSearchParams}`);
       }, [score]);
     const answers = (answer: any) => {
+        setselected(answer);
         setisdisabled(false);
-    if(category=="tech"){
-    if (answer === techQuestions[currentqt].correct) {
-            setscore(score + 1); 
-    }
-}
-else{
-    if (answer === geoQuestions[currentqt].correct) {
-            setscore(score + 1);
-}
-}
+    
 }
     const handleNextClick = (e: any) => {
         setisdisabled(true);
         e.preventDefault();
         
         setcurrentqt(currentqt + 1);
+        if(category=="tech"){
+            if (selected === techQuestions[currentqt].correct) {
+                    setscore(score + 1); 
+            }
+        }
+        else{
+            if (selected === geoQuestions[currentqt].correct) {
+                    setscore(score + 1);
+        }
+        }
     };
     const handlesetScore = () => {
         setscore(score+1);
