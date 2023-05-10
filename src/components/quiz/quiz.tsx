@@ -33,7 +33,7 @@ const Quiz = (props: Question) => {
                   value={answer}
                   type="radio"
                   name="ans"
-                  className="mr-4 w-4 h-4"
+                  className="mr-4 w-4 h-4 border"
                 />
                 {answer}
               </li>

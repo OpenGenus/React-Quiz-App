@@ -1,9 +1,11 @@
+import {useEffect} from 'react'
 import geoQuestions from '../../assets/geoQuestions.json'
 import techQuestions from '../../assets/techQuestions.json'
 import Quiz from './Quiz';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import nextbutton from '../../assets/next-icon.svg'
+import Time from './Time';
 import Countdown from 'react-countdown';
 
 
@@ -13,12 +15,18 @@ interface QuizProps {
 }
 
 const Quizs = () => {
+   
     const navigate = useNavigate()
     const { category, name } = useParams();
     const [currentqt, setcurrentqt] = useState(0);
     const [score, setscore] = useState(0);
     const [isdisabled, setisdisabled] = useState(true);
-
+    useEffect(() => {
+        const encodeScore = btoa(score.toString())
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        urlSearchParams.set('quiz', encodeScore);
+        window.history.replaceState({}, '', `${window.location.pathname}?${urlSearchParams}`);
+      }, [score]);
     const answers = (answer: any) => {
         setisdisabled(false);
     if(category=="tech"){
@@ -31,7 +39,6 @@ else{
             setscore(score + 1);
 }
 }
-
 }
     const handleNextClick = (e: any) => {
         setisdisabled(true);
@@ -44,7 +51,6 @@ else{
     }
     const Completionist = () => 
     {
-        console.log("SCORE at quiz: ", score)
         setTimeout(() =>{
             navigate(`/score/${score}/${name}`, {state: {score: score, name: name}})
          }, 1000)
@@ -71,11 +77,8 @@ if(currentqt == 10){
             </div>
             <div className='relative'>
                 <h2 className='bg-gray-200'>Quiz 10 questions</h2>
-                <h2>
-                    Time left <Countdown
-                    date={Date.now() + 300000}
-                        renderer={renderer}/>
-                        </h2>
+                        <h2>Time left </h2>
+                        <Time />
                 <h3 className=' bg-green-500 w-24 rounded-xl text-2xl p-5 absolute top-[62px]   '>{currentqt+1}/10</h3>
                 {
                 currentqt < 10 ? 
@@ -102,12 +105,12 @@ if(currentqt == 10){
                         </div>
                         </form>
                     </div>
-                : <></>}
+                : <></>
+                }
             </div>
             <div>
             </div>
         </>
     )
 }
-
 export default Quizs;

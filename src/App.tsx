@@ -11,12 +11,13 @@ function App() {
   return (
     <>
       <div>
-      <h1 className="text-3xl font-bold underline bg-gray-200"> 
+      <h1 className="text-3xl font-bold underline bg-gray-200 mb-20"> 
      Welcome to Super Quiz
     </h1>
+    
     <BrowserRouter>
     <Routes>
-      <Route path="/quiz/:category/:name" element={<Quiz/>}/>
+      <Route path="/quiz/:category/:score/:name" element={<Quiz/>}/>
       <Route path="/" element={<Home/>}/>
       <Route path="/score/:score/:name" element={<Score/>} />
       </Routes>

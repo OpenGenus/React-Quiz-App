@@ -6,11 +6,12 @@ import { useParams } from 'react-router-dom';
 //     name: string;
 // }
 const Score = () => {
-  const { score, name } = useParams<{ score: string, name: string }>();
+  const { score, name, info } = useParams<{ score: string, name: string, info: string }>();
 const scoreNumber = Number(score);
     const navigate = useNavigate()
   return (
     <div className='mt-36'>
+      <h2>{info}</h2>
             {scoreNumber >= 8 ? 
             <>            <h1 className='text-2xl font-bold'>Congrats! {name} You scored the higest 
                     Your Score is <i>{score}</i> out of 10
