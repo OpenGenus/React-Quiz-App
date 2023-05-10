@@ -6,7 +6,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import nextbutton from '../../assets/next-icon.svg'
 import Time from './Time';
-import Countdown from 'react-countdown';
 
 
 interface QuizProps {
@@ -21,7 +20,7 @@ const Quizs = () => {
     const [currentqt, setcurrentqt] = useState(0);
     const [score, setscore] = useState(0);
     const [isdisabled, setisdisabled] = useState(true);
-    let [selected, setselected] = useState() ;
+    const [selected, setselected] = useState() ;
     useEffect(() => {
         const encodeScore = btoa(score.toString())
         const urlSearchParams = new URLSearchParams(window.location.search);
@@ -49,9 +48,6 @@ const Quizs = () => {
         }
         }
     };
-    const handlesetScore = () => {
-        setscore(score+1);
-    }
     const Completionist = () => 
     {
         setTimeout(() =>{

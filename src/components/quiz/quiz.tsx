@@ -12,7 +12,6 @@ interface Question {
 }
 
 const Quiz = (props: Question) => {
-  const [answer, setanswer] = useState();
 
   const handleanswer = (e: any) => {
     props.handleCallback(e.target.value);
