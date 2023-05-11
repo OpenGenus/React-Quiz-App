@@ -3,6 +3,7 @@ interface Question {
   question: string;
   answers: string[];
   correct: string;
+  Question: any;
   isanswered: any;
   handlesetScore: any;
   handleCallback: (answer: any) => void;
