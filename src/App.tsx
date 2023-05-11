@@ -1,3 +1,7 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// @ts-ignore
+// eslint-disable-next-line react/prop-types
+
 import './App.css'
 import  Home  from './components/Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
