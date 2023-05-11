@@ -7,12 +7,6 @@ import { useState } from 'react';
 import nextbutton from '../../assets/next-icon.svg'
 import Time from './Time';
 
-
-interface QuizProps {
-    category: string;
-    name: string;
-}
-
 const Quizs = () => {
    
     const navigate = useNavigate()
