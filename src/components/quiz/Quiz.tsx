@@ -7,6 +7,8 @@ interface Question {
   isanswered: any;
   handlesetScore: any;
   handleCallback: any;
+  category: string;
+  name: string;
 }
 
 const Quiz = (props: Question) => {
