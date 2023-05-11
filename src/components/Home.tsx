@@ -10,8 +10,9 @@ const Home = () => {
 const navigate = useNavigate()
 const [name, setName] = useState('')
 const [quiz, setQuiz] = useState(true)
-const [category, setCategory] = useState('tech')
+const [category, setCategory] = useState<string>('tech');
 const [isdisabled, setisdisabled] = useState(true);
+// eslint-disable-next-line
 const handlequiz = () => {
     setQuiz(false)
     navigate(`/quiz/${category}/${name}`, {state: { category, name}})

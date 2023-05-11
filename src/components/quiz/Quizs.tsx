@@ -10,7 +10,7 @@ import { useState } from 'react';
 import nextbutton from '../../assets/next-icon.svg'
 import Time from './Time';
 
-  
+  // eslint-disable-next-line
 const Quizs = () => {
    
     const navigate = useNavigate()
