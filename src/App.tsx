@@ -14,7 +14,7 @@ function App() {
     
     <BrowserRouter>
     <Routes>
-      <Route path="/quiz/:category/:score/:name" element={<Quiz/>}/>
+      <Route path="/quiz/:category/:name" element={<Quiz/>}/>
       <Route path="/" element={<Home/>}/>
       <Route path="/score/:score/:name" element={<Score/>} />
       </Routes>

@@ -48,23 +48,6 @@ const Quizs = () => {
         }
         }
     };
-    const Completionist = () => 
-    {
-        setTimeout(() =>{
-            navigate(`/score/${score}/${name}`, {state: {score: score, name: name}})
-         }, 1000)
-    return (<span>Time is up</span>)
-   
-};
-    const renderer = ({ hours, minutes, seconds, completed }: any) => {
-        if (completed) {
-          // Render a completed state
-          return <Completionist />;
-        } else {
-          // Render a countdown
-          return <span>{hours}:{minutes}:{seconds}</span>;
-        }
-      };
 if(currentqt == 10){
     navigate(`/score/${score}/${name}`, {state: {score: score, name: name}})
 }

@@ -11,7 +11,7 @@ const [category, setCategory] = useState('tech')
 const [isdisabled, setisdisabled] = useState(true);
 const handlequiz = () => {
     setQuiz(false)
-    navigate(`/quiz/${category}/0/${name}`, {state: {category: category, name: name}})
+    navigate(`/quiz/${category}/${name}`, {state: { category, name}})
 }
 useEffect(() => {
     if(name){
