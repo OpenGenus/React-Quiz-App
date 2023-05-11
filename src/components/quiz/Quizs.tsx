@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// @ts-ignore
+// eslint-disable-next-line react/prop-types
 import {useEffect} from 'react'
 import geoQuestions from '../../assets/geoQuestions.json'
 import techQuestions from '../../assets/techQuestions.json'

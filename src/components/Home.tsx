@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// @ts-ignore
+// eslint-disable-next-line react/prop-types
 import { useEffect } from "react";
 import Quizs from "./quiz/Quizs";
 import { useState } from 'react'

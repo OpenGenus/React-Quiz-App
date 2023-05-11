@@ -1,9 +1,9 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// @ts-ignore
+// eslint-disable-next-line react/prop-types
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-// interface Scoreset {
-//     score: number;
-//     name: string;
-// }
+
 const Score = () => {
   const { score, name, info } = useParams<{ score: string, name: string, info: string }>();
 const scoreNumber = Number(score);
@@ -14,7 +14,7 @@ const scoreNumber = Number(score);
       <h2>{info}</h2>
             {scoreNumber >= 8 ? 
 <>
-<div class="celebration">
+<div className="celebration">
   <h1>Congratulations!</h1>
   <p>You got a great score!</p>
 </div>
