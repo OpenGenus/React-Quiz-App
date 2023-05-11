@@ -7,6 +7,7 @@ import { useState } from 'react';
 import nextbutton from '../../assets/next-icon.svg'
 import Time from './Time';
 
+  
 const Quizs = () => {
    
     const navigate = useNavigate()
@@ -60,7 +61,12 @@ if(currentqt == 10){
                 category === 'tech' ?
                     <div>
                         <form>
-                        <Quiz handleCallback={answers}    key={currentqt} Question={techQuestions[currentqt]}/>
+                        <Quiz handleCallback={answers} key={currentqt} Question={{ 
+                                questionId: currentqt, 
+                               question: techQuestions[currentqt].question, 
+                             answers: techQuestions[currentqt].answers, 
+                         correct: techQuestions[currentqt].correct 
+}} />
                         <div className="flex justify-end ">
                         <button disabled={isdisabled} type='submit' name="tech" className="bg-green-500 text-white px-8 py-2 rounded-md hover:scale-110 mt-[-27px] disabled:bg-gray-400 " onClick={handleNextClick}>
                             <img src={nextbutton} className='w-8' alt="next-button" />
@@ -72,7 +78,13 @@ if(currentqt == 10){
                     :
                     <div>
                         <form>
-                        <Quiz handleCallback={answers}    key={currentqt} Question={geoQuestions[currentqt]} />
+                        <Quiz handleCallback={answers} key={currentqt} Question={{ 
+                                questionId: currentqt, 
+                               question: geoQuestions[currentqt].question, 
+                             answers: geoQuestions[currentqt].answers, 
+                         correct: geoQuestions[currentqt].correct 
+}} />
+
                         <div className="flex justify-end ">
                             <button disabled={isdisabled} type='submit' name="geo" className=" bg-green-500 text-white px-8 py-2 rounded-md hover:scale-110 mt-[-27px] disabled:bg-gray-400" onClick={handleNextClick}>
                                 <img src={nextbutton} className='w-8' alt="next-button" />
