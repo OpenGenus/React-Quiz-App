@@ -1,6 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-// @ts-ignore
-// eslint-disable-next-line react/prop-types
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
@@ -30,23 +27,24 @@ const scoreNumber = Number(score);
              
                 {(scoreNumber <= 7 && scoreNumber > 5) ? 
                 <div className='text-2xl font-bold bg-yellow-400 text-white p-5'>
-                <h1>Good! {name} Try again
+                <h1>Good job! {name} Try again
                     You Scored <i>{score}</i> out of 10   
                 </h1>  </div>
                 :<h1></h1>  
                 
                 }
           
-            <div className='text-2xl font-bold bg-red-400 text-white p-5'>
+          
                 {scoreNumber <= 5 ? 
+                  <div className='text-2xl font-bold bg-red-400 text-white p-5'>
                  <h1>Nice try! {name} Try again
                  You Scored <i>{score}</i> out of 10   
              </h1>
-               
+             </div>
                  : 
                  <h1></h1>
                 }
-            </div>
+      
             <button className='p-5 bg-slate-800 text-white rounded-3xl mt-5' onClick={() => {navigate('/')}}>Try agin</button>
             </>
             }
